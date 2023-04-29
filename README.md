@@ -81,3 +81,19 @@ The elements you dynamically create should look like this:
 ## Attribution
 
 Music courtesy of [Bensound](bensound.com)
+
+----
+## Run the project
+
+This project use yarn for package management and React
+
+```bash
+# Go to project root
+cd site
+
+# Install dependencies
+yarn install
+
+# Run the project
+yarn start
+```
