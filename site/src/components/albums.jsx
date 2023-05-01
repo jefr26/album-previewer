@@ -1,4 +1,4 @@
-import SingleAlbum from "./singleAlbum"
+import SingleAlbum from './singleAlbum'
 
 const Albums = ({ albums, setShowAlbum }) => {
 	return (

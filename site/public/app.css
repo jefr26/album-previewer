@@ -34,7 +34,6 @@ img {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  width: 1000px;
 }
 
 .album {
