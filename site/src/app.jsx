@@ -1,7 +1,13 @@
+import { useState } from "react"
+import Albums from "./components/albums"
+
 const App = () => {
-	console.log(albums)
-	return(
-		<h1>Hello from App</h1>
+	const [showAlbum, setShowAlbum] = useState(false)
+
+	return (
+		<>
+			{!showAlbum && <Albums albums={albums} setShowAlbum={setShowAlbum} />}
+		</>
 	)
 }
 
