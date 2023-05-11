@@ -1,10 +1,15 @@
 import Track from "./track";
 
-const TrackList = ({ tracks }) => {
+const TrackList = ({ tracks, autoPlay, setTrack }) => {
 	return (
 		<ul className="tracks">
 			{tracks.map(track => (
-				<Track track={track} key={track.id} />
+				<Track
+					key={track.id}
+					track={track}
+					setTrack={setTrack}
+					autoPlay={autoPlay}
+				/>
 			))}		
 		</ul>
 	)

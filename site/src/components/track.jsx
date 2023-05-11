@@ -1,6 +1,10 @@
-const Track = ({ track }) => {
+const Track = ({ track, setTrack, autoPlay }) => {
 	return (
-		<li>{track.title}</li>
+		<li
+			onClick={() => setTrack(`/assets/tracks/${track.file_name}`)}
+		>
+			{track.title}
+		</li>
 	)
 }
 
