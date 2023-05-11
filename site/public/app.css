@@ -70,3 +70,11 @@ button {
   font-style: italic;
   margin-bottom: 16px;
 }
+
+h3.go-back {
+	cursor: pointer;
+}
+
+.album-detail {
+	display: flex;
+}

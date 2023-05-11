@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState, useTransition} from 'react'
 import Albums from './components/albums'
 import AlbumDetail from './components/albumDetail'
 
 const App = () => {
+	const [isPending, startTransition] = useTransition()
 	const [showAlbum, setShowAlbum] = useState(null)
 	const [albumData, setAlbumData] = useState(null)
 
-	useEffect(() => {
-		if (showAlbum) {
-			let data = albums.filter(album => album.id === showAlbum)
-			console.log(showAlbum)
-			console.log(data)
+	const selectAlbum = (albumId) => {
+		startTransition(() => {
+			let data = albums.find(album => album.id === albumId)
+			setShowAlbum(albumId)
 			setAlbumData(data)
-		}
-	}, [showAlbum])
+		})
+	}
 
 	return (
 		<>
-			{!showAlbum && <Albums albums={albums} setShowAlbum={setShowAlbum} />}
-			{showAlbum && <AlbumDetail album={albumData} />}
+			{!showAlbum && <Albums albums={albums} setShowAlbum={selectAlbum} />}
+			{!isPending && showAlbum && <AlbumDetail album={albumData} setShowAlbum={setShowAlbum} />}
 		</>
 	)
 }
